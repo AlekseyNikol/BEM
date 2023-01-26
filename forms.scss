@@ -1,0 +1,20 @@
+
+
+//<BUTTONS>
+.btn{
+    display: inline-block;
+    padding: 0px 0px;
+    height: 47px;
+    padding: 0px 44px;
+    text-transform: uppercase;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    &_w{
+        border: 1px solid #fff;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -5,6 +5,9 @@
 //<ФРИФТ>
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
 
+//<ИМПОРТ>
+@import "forms.scss";
+
 //ШРИФТ ПО УМОЛЧАНИЮ
 $fontfamily:"Lato";
 
@@ -28,7 +31,7 @@ list-style: none;}
 a:focus,a:active{outline: none;}
 aside,nav,footer,header,section{display: block;}
 html,body{height: 100%;margin: 0;padding: 0;min-width: $minwidth;position: relative;width: 100%;}
-body{font-size: 14px;line-height: 1;font-family:$fontfamily;}
+body{font-size: 14px;line-height: 1;font-family:$fontfamily;
     &.lock{overflow: hidden;
         @media(max-width:$md3+px) {
             width: 100%;
@@ -36,29 +39,38 @@ body{font-size: 14px;line-height: 1;font-family:$fontfamily;}
             overflow: hidden;
         }
     }
+}
 
 //<ОБОЛОЧКА>
 .wrapper{width: 100%;min-height: 100%; @include flexbox();flex-direction: column;}
 
 //<ОСНОВНАЯ СЕТКА>
-.container{width: 100%; min-height: 100%;   overflow: hidden;
-    &.loaded{}
+.container{width: 100%; min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+        &.loaded{}
 }
 .mainblock {
     flex: 1 1 auto;
     position: relative;
     @include flexbox();
-    justify-content: center;
+    justify-content: center;;
     align-items: center;
+    padding: 50px 50px;
 // mainblock__content
     &__content {
         position: relative;
         z-index: 1;
+        height: 100%;
     }
     &__logo {}
     &__text {
         color: #fff;
         position: relative;
+        padding: 0px 0px 45px 0px;
+        margin: 160px 0px 200px 0px;
         &:after{
             content: '';
             width: 105px;
@@ -66,7 +78,8 @@ body{font-size: 14px;line-height: 1;font-family:$fontfamily;}
             background-color: #fff;
             position: absolute;
             left: 50%;
-            margin: 0px 0px 0px 5px;
+            margin: 0px 0px 0px -45px;
+            bottom: 0;
         }
     }
     &__title {
@@ -75,11 +88,13 @@ body{font-size: 14px;line-height: 1;font-family:$fontfamily;}
         line-height: 40px;
         text-transform: uppercase;
         letter-spacing: 5.43px;
+        padding: 0px 0px 10px 0px;
     }
     &__subtitle {
         font-size: 26px;
         font-weight: 400;
         letter-spacing: 4.15px;
+        text-align: center;
     }
     &__footer {}
     &__btn {}
