@@ -56,16 +56,23 @@ body{font-size: 14px;line-height: 1;font-family:$fontfamily;
     flex: 1 1 auto;
     position: relative;
     @include flexbox();
-    justify-content: center;;
+    justify-content: center;
     align-items: center;
-    padding: 50px 50px;
+    text-align: center;
+    padding: 50px 0;
+    @madia screen and (max-width: $md3+px),
+        screen and (max-height: 600px) {
+            padding: 20px 0;
+        }
 // mainblock__content
     &__content {
         position: relative;
         z-index: 1;
         height: 100%;
     }
+// mainblock__logo
     &__logo {}
+// mainblock__text
     &__text {
         color: #fff;
         position: relative;
@@ -89,6 +96,10 @@ body{font-size: 14px;line-height: 1;font-family:$fontfamily;
         text-transform: uppercase;
         letter-spacing: 5.43px;
         padding: 0px 0px 10px 0px;
+        @madia screen and (max-width: $md3+px) , screen and (max-height: 600px) {
+            font-size: 25px;
+            line-height: 30px;
+        }
     }
     &__subtitle {
         font-size: 26px;
